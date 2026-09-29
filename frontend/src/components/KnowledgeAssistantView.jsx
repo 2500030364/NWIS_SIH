@@ -191,7 +191,7 @@ export default function KnowledgeAssistantView({
                     <div className="pt-2 border-t border-gray-100 flex items-center justify-between">
                       <span className="text-[10px] font-mono text-gray-500">Page {cit.page_number}</span>
                       <a
-                        href={`http://127.0.0.1:8000/reports_static/${cit.document_name.includes('.pdf') ? cit.document_name : 'NWIS-W007_Drilling_Report_Lost_Circulation.pdf'}`}
+                        href={`https://nwis-sih.onrender.com/reports_static/${cit.document_name.includes('.pdf') ? cit.document_name : 'NWIS-W007_Drilling_Report_Lost_Circulation.pdf'}`}
                         target="_blank"
                         rel="noreferrer"
                         className="text-xs font-bold text-[#1E2E1E] hover:underline flex items-center space-x-1"
