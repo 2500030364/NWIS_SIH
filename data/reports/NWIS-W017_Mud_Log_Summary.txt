@@ -1,0 +1,10 @@
+=====================================================================
+MUD LOGGING GEOLOGICAL EVALUATION
+WELL: NWIS-W017 | TOTAL DEPTH: 3696.86m
+=====================================================================
+LITHOLOGICAL EVALUATION:
+- Demo-Tipam Sandstone (1620m - 2480m): Fine to medium grained quartzose sand,
+  good visible porosity, light yellow fluorescence, slow milky cut.
+- Demo-Barail (2860m - 3380m): Clean sandstone interbedded with carbonaceous
+  shale and thin sub-bituminous coal seams. Total Gas: peaks to 450 units.
+- Demo-Kopili Shale: Hard, dark grey fissile shale with moderate swelling potential.

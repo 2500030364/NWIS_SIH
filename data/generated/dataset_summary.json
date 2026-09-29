@@ -1,0 +1,213 @@
+{
+  "field_name": "Demo-Dihing Basin (Fictional Field)",
+  "generated_at": "2026-09-28T21:44:03.301009",
+  "counts": {
+    "wells": 25,
+    "formations": 153,
+    "drilling_parameters": 4375,
+    "historical_events": 122,
+    "reports": 63
+  },
+  "wells": [
+    {
+      "id": 1,
+      "well_name": "NWIS-W001",
+      "latitude": 27.38199,
+      "longitude": 95.40971,
+      "total_depth": 3561.82,
+      "status": "COMPLETED"
+    },
+    {
+      "id": 2,
+      "well_name": "NWIS-W002",
+      "latitude": 27.390381,
+      "longitude": 95.348599,
+      "total_depth": 3397.22,
+      "status": "COMPLETED"
+    },
+    {
+      "id": 3,
+      "well_name": "NWIS-W003",
+      "latitude": 27.342634,
+      "longitude": 95.32006,
+      "total_depth": 3801.03,
+      "status": "COMPLETED"
+    },
+    {
+      "id": 4,
+      "well_name": "NWIS-W004",
+      "latitude": 27.367083,
+      "longitude": 95.380272,
+      "total_depth": 3906.17,
+      "status": "COMPLETED"
+    },
+    {
+      "id": 5,
+      "well_name": "NWIS-W005",
+      "latitude": 27.371834,
+      "longitude": 95.329338,
+      "total_depth": 3729.39,
+      "status": "COMPLETED"
+    },
+    {
+      "id": 6,
+      "well_name": "NWIS-W006",
+      "latitude": 27.306853,
+      "longitude": 95.441262,
+      "total_depth": 3406.64,
+      "status": "SUSPENDED"
+    },
+    {
+      "id": 7,
+      "well_name": "NWIS-W007",
+      "latitude": 27.333253,
+      "longitude": 95.378567,
+      "total_depth": 3369.14,
+      "status": "COMPLETED"
+    },
+    {
+      "id": 8,
+      "well_name": "NWIS-W008",
+      "latitude": 27.345114,
+      "longitude": 95.400296,
+      "total_depth": 4013.44,
+      "status": "COMPLETED"
+    },
+    {
+      "id": 9,
+      "well_name": "NWIS-W009",
+      "latitude": 27.370315,
+      "longitude": 95.351208,
+      "total_depth": 3511.07,
+      "status": "COMPLETED"
+    },
+    {
+      "id": 10,
+      "well_name": "NWIS-W010",
+      "latitude": 27.312742,
+      "longitude": 95.357738,
+      "total_depth": 3166.45,
+      "status": "DRILLING"
+    },
+    {
+      "id": 11,
+      "well_name": "NWIS-W011",
+      "latitude": 27.394961,
+      "longitude": 95.330121,
+      "total_depth": 3389.35,
+      "status": "COMPLETED"
+    },
+    {
+      "id": 12,
+      "well_name": "NWIS-W012",
+      "latitude": 27.288357,
+      "longitude": 95.413906,
+      "total_depth": 3529.19,
+      "status": "DRILLING"
+    },
+    {
+      "id": 13,
+      "well_name": "NWIS-W013",
+      "latitude": 27.296408,
+      "longitude": 95.352474,
+      "total_depth": 3868.13,
+      "status": "DRILLING"
+    },
+    {
+      "id": 14,
+      "well_name": "NWIS-W014",
+      "latitude": 27.390934,
+      "longitude": 95.410764,
+      "total_depth": 3961.01,
+      "status": "DRILLING"
+    },
+    {
+      "id": 15,
+      "well_name": "NWIS-W015",
+      "latitude": 27.361534,
+      "longitude": 95.364046,
+      "total_depth": 3495.25,
+      "status": "COMPLETED"
+    },
+    {
+      "id": 16,
+      "well_name": "NWIS-W016",
+      "latitude": 27.417027,
+      "longitude": 95.348184,
+      "total_depth": 3595.63,
+      "status": "COMPLETED"
+    },
+    {
+      "id": 17,
+      "well_name": "NWIS-W017",
+      "latitude": 27.39653,
+      "longitude": 95.379479,
+      "total_depth": 3696.86,
+      "status": "DRILLING"
+    },
+    {
+      "id": 18,
+      "well_name": "NWIS-W018",
+      "latitude": 27.329793,
+      "longitude": 95.394307,
+      "total_depth": 3881.84,
+      "status": "COMPLETED"
+    },
+    {
+      "id": 19,
+      "well_name": "NWIS-W019",
+      "latitude": 27.322271,
+      "longitude": 95.338841,
+      "total_depth": 3410.38,
+      "status": "DRILLING"
+    },
+    {
+      "id": 20,
+      "well_name": "NWIS-W020",
+      "latitude": 27.334334,
+      "longitude": 95.398953,
+      "total_depth": 3742.65,
+      "status": "COMPLETED"
+    },
+    {
+      "id": 21,
+      "well_name": "NWIS-W021",
+      "latitude": 27.378969,
+      "longitude": 95.324166,
+      "total_depth": 3607.84,
+      "status": "DRILLING"
+    },
+    {
+      "id": 22,
+      "well_name": "NWIS-W022",
+      "latitude": 27.32163,
+      "longitude": 95.44373,
+      "total_depth": 3849.51,
+      "status": "ACTIVE"
+    },
+    {
+      "id": 23,
+      "well_name": "NWIS-W023",
+      "latitude": 27.377513,
+      "longitude": 95.373344,
+      "total_depth": 3971.97,
+      "status": "SUSPENDED"
+    },
+    {
+      "id": 24,
+      "well_name": "NWIS-W024",
+      "latitude": 27.373148,
+      "longitude": 95.344732,
+      "total_depth": 3114.3,
+      "status": "DRILLING"
+    },
+    {
+      "id": 25,
+      "well_name": "NWIS-W025",
+      "latitude": 27.333379,
+      "longitude": 95.397671,
+      "total_depth": 3906.64,
+      "status": "DRILLING"
+    }
+  ]
+}

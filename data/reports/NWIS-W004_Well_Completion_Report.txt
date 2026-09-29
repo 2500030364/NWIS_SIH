@@ -1,0 +1,11 @@
+=====================================================================
+WELL COMPLETION REPORT (WCR)
+WELL: NWIS-W004 | TARGET RESERVOIR: Demo-Barail Sand
+FINAL TOTAL DEPTH: 3906.17m TVD
+=====================================================================
+COMPLETION DETAILS:
+7-inch production liner set from 2650m to 3886.17m.
+Perforated interval: 3012.0m - 3028.0m with 4-1/2 inch tubing conveyed guns.
+Initial reservoir pressure: 3820 psi. Flow tested through 24/64 inch choke.
+Tubing head pressure (THP): 1420 psi. Produced clean sweet crude.
+Well handed over to production operations.

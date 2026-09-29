@@ -1,0 +1,67 @@
+# ==============================================================================
+# NWIS (Nearby Wells Intelligence System) - Complete Docker Compose
+# ==============================================================================
+# Services:
+#   1. postgres: PostgreSQL 16 relational database with auto-seeded synthetic data
+#   2. backend:  FastAPI core APIs, Smart Risk Engine & AI Semantic Search
+#   3. frontend: React Industrial Operations Cockpit UI served via Nginx
+# ==============================================================================
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: nwis-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-nwis_db}
+      POSTGRES_USER: ${POSTGRES_USER:-nwis_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-nwis_password}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./database/seed.sql:/docker-entrypoint-initdb.d/02-seed.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-nwis_user} -d ${POSTGRES_DB:-nwis_db}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: nwis-backend
+    restart: unless-stopped
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: ${POSTGRES_DB:-nwis_db}
+      DATABASE_USER: ${POSTGRES_USER:-nwis_user}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD:-nwis_password}
+      DATABASE_URL: postgresql+psycopg2://${POSTGRES_USER:-nwis_user}:${POSTGRES_PASSWORD:-nwis_password}@postgres:5432/${POSTGRES_DB:-nwis_db}
+      API_HOST: 0.0.0.0
+      API_PORT: 8000
+      CORS_ORIGINS: http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000,http://127.0.0.1:3000,http://localhost:80
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: nwis-frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+
+volumes:
+  postgres_data:
+    driver: local

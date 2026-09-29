@@ -1,0 +1,11 @@
+=====================================================================
+DAILY DRILLING REPORT (DDR) - RIG 04
+WELL: NWIS-W009 | FIELD: Demo-Dihing Basin (Fictional Field)
+OPERATING DATE: 2021-08-16
+=====================================================================
+SUMMARY OF OPERATIONS:
+Drilled 8-1/2 inch hole section from 2840.0m to 3110.0m in Demo-Barail formation.
+Average ROP: 14.8 m/hr. Flow rate: 2400 L/min. Active mud weight: 1.26 SG.
+Encountered differential pressure zone at 2980-3020m. Mud losses treated with
+medium calcium carbonate LCM sweep. Gas levels normal at 1.4%.
+Status at 06:00 hrs: Circulating bottoms up prior to bit change.

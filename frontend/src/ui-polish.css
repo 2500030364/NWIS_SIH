@@ -1,0 +1,716 @@
+/* NWIS field-operations cockpit: olive structure, mustard signals, restrained surfaces. */
+:root {
+  --nwis-ink: #1e2e1e;
+  --nwis-olive: #2d422d;
+  --nwis-olive-soft: #405640;
+  --nwis-mustard: #e5a93c;
+  --nwis-canvas: #f3f4ef;
+  --nwis-surface: #fff;
+  --nwis-line: #dfe4da;
+  --nwis-muted: #6f7b6d;
+  --nwis-shadow: 0 7px 22px rgba(31, 46, 31, 0.055);
+}
+
+body,
+.nwis-shell {
+  background: var(--nwis-canvas) !important;
+}
+
+.nwis-sidebar {
+  width: 248px;
+  background: var(--nwis-ink) !important;
+  border-right: 1px solid #344834 !important;
+}
+
+.nwis-sidebar > div:first-child {
+  padding-top: 22px;
+}
+
+.nwis-sidebar > div:first-child > div:first-child {
+  color: #aeb9aa !important;
+  font-size: 10px !important;
+  letter-spacing: 0.14em;
+  padding-bottom: 14px;
+}
+
+.nwis-nav-item {
+  min-height: 42px;
+  border-radius: 8px !important;
+  padding-inline: 12px !important;
+  letter-spacing: 0.005em;
+}
+
+.nwis-nav-item:not(.bg-\[\#E5A93C\]) {
+  color: #d3d9d0 !important;
+}
+
+.nwis-sidebar > div:last-child {
+  background: #192719 !important;
+  border-color: #344834 !important;
+  line-height: 1.55;
+}
+
+.nwis-header {
+  min-height: 76px;
+  gap: 14px;
+  padding: 12px 22px !important;
+  background: var(--nwis-surface) !important;
+  color: var(--nwis-ink) !important;
+  border-bottom: 1px solid var(--nwis-line) !important;
+  box-shadow: 0 2px 8px rgba(31, 46, 31, 0.035) !important;
+}
+
+.nwis-header .text-gray-100,
+.nwis-header .text-gray-200,
+.nwis-header .text-white {
+  color: var(--nwis-ink) !important;
+}
+
+.nwis-header .text-gray-300,
+.nwis-header .text-gray-400 {
+  color: var(--nwis-muted) !important;
+}
+
+.nwis-header .nwis-brand {
+  min-width: 0;
+}
+
+.nwis-header .nwis-brand > div:first-child > div:last-child > div:last-child {
+  color: var(--nwis-muted) !important;
+}
+
+.nwis-header > div:last-child {
+  gap: 9px !important;
+}
+
+.nwis-header > div:last-child > div {
+  border-radius: 8px !important;
+  border-color: var(--nwis-line) !important;
+  background: #f6f7f3 !important;
+}
+
+.nwis-header select {
+  color: var(--nwis-ink) !important;
+}
+
+.nwis-header select option {
+  background: #fff !important;
+  color: var(--nwis-ink) !important;
+}
+
+/* The KPI rail acts as the compact operational readout, not a row of generic cards. */
+.nwis-kpis {
+  display: grid !important;
+  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
+  gap: 0 !important;
+  padding: 10px 18px !important;
+  background: var(--nwis-ink) !important;
+  border: 0 !important;
+  border-bottom: 3px solid var(--nwis-mustard) !important;
+  box-shadow: 0 5px 14px rgba(24, 39, 24, 0.13) !important;
+}
+
+.nwis-kpi-card {
+  min-width: 0;
+  min-height: 72px;
+  padding: 8px 15px !important;
+  border: 0 !important;
+  border-left: 1px solid rgba(228, 236, 221, 0.19) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.nwis-kpi-card:first-child {
+  border-left: 0 !important;
+  padding-left: 4px !important;
+}
+
+.nwis-kpi-card .text-gray-500 {
+  color: #bdc7b7 !important;
+}
+
+.nwis-kpi-card svg {
+  color: var(--nwis-mustard) !important;
+}
+
+.nwis-kpi-card > div:nth-child(2) {
+  color: #fff !important;
+  font-size: 17px;
+  font-weight: 650;
+  letter-spacing: -0.025em;
+}
+
+.nwis-kpi-card > div:nth-child(2) .text-gray-500 {
+  color: #d1d8ce !important;
+}
+
+.nwis-kpi-card > div:first-child > span:first-child {
+  color: #c3cdbd !important;
+  font-size: 9px !important;
+  letter-spacing: 0.13em;
+}
+
+.nwis-kpi-card .text-emerald-700 {
+  color: #d0dfc6 !important;
+}
+
+.nwis-content {
+  padding: 19px 22px !important;
+  background: var(--nwis-canvas);
+  scrollbar-gutter: stable;
+}
+
+.nwis-overview-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 1px 2px 3px;
+}
+
+.nwis-overview-heading h1 {
+  margin: 4px 0 2px;
+  color: var(--nwis-ink);
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+}
+
+.nwis-overview-heading p {
+  margin: 0;
+  color: #687568;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.nwis-eyebrow {
+  color: #667663;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.nwis-demo-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border: 1px solid #d9dfd2;
+  border-radius: 4px;
+  background: #ecefe8;
+  color: #52624f;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.nwis-demo-tag > span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--nwis-mustard);
+}
+
+.nwis-content [class*="rounded-xl"][class*="border"] {
+  border-radius: 12px;
+  border-color: var(--nwis-line);
+}
+
+.nwis-content [class*="shadow-xs"] {
+  box-shadow: var(--nwis-shadow);
+}
+
+.nwis-dashboard-grid {
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 16px !important;
+}
+
+.nwis-map-card {
+  grid-column: span 8 / span 8;
+  min-height: 480px;
+  padding: 15px !important;
+  border: 1px solid #d9dfd4 !important;
+  border-top: 3px solid var(--nwis-olive) !important;
+  background: #fff !important;
+}
+
+.nwis-map-card > div:first-child {
+  min-height: 38px;
+  padding-bottom: 10px !important;
+  border-color: var(--nwis-line) !important;
+}
+
+.nwis-map-card > div:first-child > div:first-child {
+  color: var(--nwis-ink);
+}
+
+.nwis-map-card > div:first-child > div:first-child > span {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.nwis-section-context {
+  padding: 4px 7px;
+  border-radius: 3px;
+  background: #edf0e9;
+  color: #53654f;
+  font-size: 9px;
+  letter-spacing: 0.06em;
+}
+
+.nwis-map-card .relative.w-full {
+  border-color: #d9dfd4 !important;
+  border-radius: 9px !important;
+  box-shadow: none !important;
+}
+
+.nwis-risk-column {
+  grid-column: span 4 / span 4;
+}
+
+.nwis-risk-column > div {
+  height: 100%;
+  border-radius: 12px;
+  box-shadow: var(--nwis-shadow);
+}
+
+.nwis-status-panel {
+  border: 1px solid #d9dfd4 !important;
+  border-top: 3px solid var(--nwis-olive) !important;
+  border-radius: 12px !important;
+  box-shadow: var(--nwis-shadow) !important;
+}
+
+.nwis-status-panel > div:first-child {
+  padding-bottom: 11px;
+}
+
+.nwis-status-panel > div:nth-child(2) > div {
+  border-radius: 7px;
+  background-color: #f7f8f4;
+  border-color: #e2e6de;
+}
+
+.nwis-content [class*="rounded-xl"][class*="border"],
+.nwis-content [class*="rounded-lg"][class*="border"] {
+  border-color: var(--nwis-line);
+}
+
+.nwis-content button {
+  transition: background-color 140ms ease, border-color 140ms ease, color 140ms ease, box-shadow 140ms ease;
+}
+
+.nwis-content button:focus-visible,
+.nwis-sidebar button:focus-visible,
+.nwis-header button:focus-visible,
+.nwis-header select:focus-visible {
+  outline: 2px solid var(--nwis-mustard);
+  outline-offset: 2px;
+}
+
+.leaflet-control-zoom a {
+  color: var(--nwis-ink) !important;
+}
+
+@media (max-width: 1100px) {
+  .nwis-kpis {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .nwis-kpi-card:nth-child(4) {
+    border-left: 0 !important;
+  }
+
+  .nwis-map-card {
+    grid-column: span 7 / span 7;
+  }
+
+  .nwis-risk-column {
+    grid-column: span 5 / span 5;
+  }
+}
+
+@media (max-width: 900px) {
+  .nwis-sidebar {
+    width: 72px;
+  }
+
+  .nwis-sidebar > div:first-child > div:first-child {
+    height: 30px;
+    overflow: hidden;
+    font-size: 0 !important;
+  }
+
+  .nwis-nav-item {
+    justify-content: center !important;
+    padding-inline: 8px !important;
+  }
+
+  .nwis-nav-item > div {
+    justify-content: center;
+  }
+
+  .nwis-nav-item > div > span,
+  .nwis-nav-item > span {
+    display: none;
+  }
+
+  .nwis-sidebar > div:last-child p,
+  .nwis-sidebar > div:last-child span {
+    display: none;
+  }
+
+  .nwis-sidebar > div:last-child > div {
+    justify-content: center;
+  }
+
+  .nwis-header {
+    padding-inline: 16px !important;
+  }
+
+  .nwis-content {
+    padding: 16px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .nwis-kpis {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .nwis-kpi-card:nth-child(odd) {
+    border-left: 0 !important;
+  }
+
+  .nwis-dashboard-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nwis-map-card,
+  .nwis-risk-column {
+    grid-column: auto;
+  }
+
+  .nwis-map-card {
+    min-height: 380px;
+  }
+
+  .nwis-map-card .h-\[440px\] {
+    height: 360px;
+  }
+
+  .nwis-risk-column > div {
+    height: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .nwis-header {
+    align-items: flex-start;
+    padding: 11px 13px !important;
+  }
+
+  .nwis-header .nwis-brand > div:first-child > div:last-child > div:first-child > span:first-child {
+    max-width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 10px !important;
+  }
+
+  .nwis-header > div:last-child {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .nwis-header > div:last-child > div {
+    padding: 6px 8px !important;
+  }
+
+  .nwis-content {
+    padding: 12px !important;
+  }
+
+  .nwis-overview-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9px;
+  }
+
+  .nwis-overview-heading h1 {
+    font-size: 18px;
+  }
+
+  .nwis-overview-heading p {
+    max-width: 36ch;
+  }
+
+  .nwis-header select {
+    max-width: 126px;
+    font-size: 12px !important;
+  }
+
+  .nwis-header > div:last-child > div:first-child {
+    flex: 1 1 100%;
+    justify-content: space-between;
+  }
+
+  .nwis-header > div:last-child > div:nth-child(2) {
+    flex: 1 1 76px;
+  }
+
+  .nwis-header > div:last-child > div:nth-child(3) {
+    flex: 1 1 120px;
+    justify-content: center;
+  }
+
+  .nwis-map-card {
+    min-height: 350px;
+    padding: 11px !important;
+  }
+
+  .nwis-map-card .h-\[440px\] {
+    height: 320px;
+  }
+
+  .nwis-map-card .absolute.top-3.left-3 {
+    max-width: calc(100% - 20px);
+    padding: 6px;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+
+  .nwis-map-card .absolute.top-3.left-3 button {
+    padding: 3px 5px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .nwis-sidebar {
+    width: 58px;
+  }
+
+  .nwis-sidebar nav {
+    padding-inline: 6px !important;
+  }
+
+  .nwis-nav-item {
+    min-height: 39px;
+  }
+
+  .nwis-kpis {
+    grid-template-columns: minmax(0, 1fr) !important;
+    padding: 8px 13px !important;
+  }
+
+  .nwis-kpi-card {
+    min-height: 59px;
+    padding: 6px 10px !important;
+    border-left: 0 !important;
+    border-top: 1px solid rgba(228, 236, 221, 0.17) !important;
+  }
+
+  .nwis-kpi-card:first-child {
+    border-top: 0 !important;
+    padding-left: 10px !important;
+  }
+
+  .nwis-content {
+    padding: 10px !important;
+  }
+
+  .nwis-header {
+    padding-inline: 10px !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nwis-content button,
+  .nwis-nav-item {
+    transition: none !important;
+  }
+}
+
+/* Full-width application shell with compact, persistent top navigation. */
+.nwis-shell { width: 100vw; }
+.nwis-workspace { width: 100%; min-width: 0; }
+.nwis-header {
+  min-height: 66px;
+  display: grid !important;
+  grid-template-columns: max-content minmax(0, 1fr) max-content;
+  align-items: center;
+  gap: 16px !important;
+  padding: 9px 18px !important;
+  flex-wrap: nowrap !important;
+}
+.nwis-topbar-brand { display: flex; align-items: center; gap: 9px; min-width: 215px; }
+.nwis-topbar-home { padding: 0; border: 0; background: transparent; text-align: left; cursor: pointer; }
+.nwis-topbar-home:hover .nwis-brand-mark { filter: brightness(1.04); }
+.nwis-topbar-home:focus-visible { outline: 2px solid var(--nwis-mustard); outline-offset: 3px; border-radius: 5px; }
+.nwis-brand-mark {
+  display: inline-flex; width: 34px; height: 34px; flex: 0 0 34px;
+  align-items: center; justify-content: center; border-radius: 5px;
+  background: var(--nwis-mustard); color: var(--nwis-ink); font-size: 10px;
+  font-weight: 900; letter-spacing: -.03em;
+}
+.nwis-brand-copy { display: grid; gap: 3px; min-width: 0; }
+.nwis-brand-copy strong { color: var(--nwis-ink); font-size: 10px; font-weight: 850; letter-spacing: .045em; text-transform: uppercase; white-space: nowrap; }
+.nwis-brand-copy span { color: #778172; font-size: 9px; }
+.nwis-topnav { display: flex; align-items: center; justify-content: center; gap: 2px; min-width: 0; }
+.nwis-topnav-link {
+  display: inline-flex; align-items: center; justify-content: center; gap: 4px;
+  min-height: 34px; padding: 0 8px; border: 0; border-radius: 5px;
+  background: transparent; color: #536052; font-size: 10px; font-weight: 650;
+  white-space: nowrap; cursor: pointer;
+}
+.nwis-topnav-link:hover, .nwis-topnav-link.is-active { background: #edf0e9; color: var(--nwis-ink); }
+.nwis-topnav-link.is-active { box-shadow: inset 0 -2px 0 var(--nwis-mustard); }
+.nwis-more-wrap { position: relative; }
+.nwis-more-menu {
+  position: absolute; z-index: 1300; top: calc(100% + 7px); right: 0; width: 210px;
+  padding: 5px; border: 1px solid var(--nwis-line); border-radius: 8px;
+  background: white; box-shadow: 0 12px 30px rgba(24,39,24,.17);
+}
+.nwis-more-menu button {
+  display: flex; width: 100%; align-items: center; justify-content: space-between;
+  padding: 9px 10px; border: 0; border-radius: 5px; background: white;
+  color: #435042; text-align: left; font-size: 11px; cursor: pointer;
+}
+.nwis-more-menu button:hover, .nwis-more-menu button.is-active { background: #f0f2ec; color: var(--nwis-ink); }
+.nwis-nav-count { min-width: 19px; padding: 2px 5px; border-radius: 10px; background: #f3e5c6; color: #70521d; text-align: center; font-size: 9px; font-weight: 800; }
+.nwis-topbar-ops { display: flex; align-items: center; justify-content: flex-end; gap: 8px; min-width: 0; }
+.nwis-system-status { display: inline-flex; align-items: center; gap: 5px; color: #477458; font-size: 9px; font-weight: 700; white-space: nowrap; }
+.nwis-system-status.is-offline { color: #a43f36; }
+.nwis-active-well {
+  display: flex; align-items: center; gap: 6px; padding: 7px 8px;
+  border: 1px solid var(--nwis-line); border-radius: 6px; background: #f7f8f4;
+  color: #6d7868; font-size: 9px; font-weight: 700; white-space: nowrap;
+}
+.nwis-active-well svg { color: #a27a2d; }
+.nwis-active-well select { max-width: 125px; border: 0; outline: 0; background: transparent; color: var(--nwis-ink); font-size: 10px; font-weight: 750; }
+.nwis-header-stepper { display: flex; gap: 3px; }
+.nwis-header-stepper button { padding: 6px 7px; border: 1px solid #dfe4da; border-radius: 5px; background: #f5f6f2; color: var(--nwis-ink); font-size: 9px; font-weight: 750; cursor: pointer; }
+.nwis-header-stepper button:nth-child(n+2) { border-color: #e5a93c; background: #e5a93c; }
+.nwis-header-stepper button:disabled { opacity: .5; cursor: wait; }
+.nwis-header button:focus-visible, .nwis-header select:focus-visible { outline: 2px solid var(--nwis-mustard); outline-offset: 2px; }
+
+/* Product introduction and technical well-section illustration. */
+.nwis-landing { min-height: 100vh; overflow: hidden; background: #f5f6f1; color: #1e2e1e; }
+.nwis-landing-header, .nwis-landing main, .nwis-landing-footer { width: min(1180px, calc(100% - 56px)); margin-inline: auto; }
+.nwis-landing-header { height: 76px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #dfe4da; }
+.nwis-landing-brand { display: flex; align-items: center; gap: 10px; color: inherit; text-decoration: none; }
+.nwis-landing-brand > span:last-child { display: grid; gap: 2px; }
+.nwis-landing-brand strong { font-size: 11px; letter-spacing: .09em; }
+.nwis-landing-brand small { color: #6f7b6d; font-size: 9px; }
+.nwis-about-link, .nwis-explore-link { display: inline-flex; align-items: center; gap: 7px; color: #596958; text-decoration: none; font-size: 11px; font-weight: 700; }
+.nwis-about-link:hover, .nwis-explore-link:hover { color: #98722d; }
+.nwis-landing-hero { display: grid; grid-template-columns: 1.18fr .82fr; align-items: center; gap: 40px; min-height: 530px; padding: 55px 0 63px; }
+.nwis-hero-copy { max-width: 530px; }
+.nwis-landing-eyebrow { display: flex; align-items: center; gap: 8px; color: #6c7a65; font-size: 9px; font-weight: 850; letter-spacing: .17em; }
+.nwis-landing-eyebrow > span { width: 17px; height: 2px; background: #d69c32; }
+.nwis-hero-copy h1 { margin: 20px 0 18px; color: #1e2e1e; font-size: clamp(40px, 4.55vw, 62px); line-height: 1.08; letter-spacing: -.04em; font-weight: 800; text-transform: uppercase; }
+.nwis-hero-copy h1 em { color: #78836f; font-style: normal; white-space: nowrap; }
+.nwis-hero-lede { max-width: 510px; margin: 0 0 12px; color: #344333; font-size: 18px; font-weight: 640; line-height: 1.48; }
+.nwis-hero-description { max-width: 480px; margin: 0; color: #687467; font-size: 13px; line-height: 1.7; }
+.nwis-hero-actions { display: flex; align-items: center; gap: 22px; margin-top: 25px; }
+.nwis-enter-button { display: inline-flex; align-items: center; gap: 22px; padding: 14px 18px; border: 0; border-radius: 4px; background: #243824; color: white; font-size: 11px; font-weight: 850; letter-spacing: .08em; text-transform: uppercase; cursor: pointer; transition: background 140ms ease, transform 140ms ease; }
+.nwis-enter-button:hover { background: #344d34; transform: translateY(-1px); }
+.nwis-enter-button svg { color: #edb747; }
+.nwis-hero-footnote { display: flex; align-items: center; gap: 7px; margin-top: 26px; color: #7c8777; font-size: 9px; }
+.nwis-hero-footnote span { width: 6px; height: 6px; border-radius: 50%; background: #d8a53d; }
+.nwis-geo-visual { position: relative; height: 370px; overflow: hidden; border: 1px solid #dce1d5; background: #edf0e8; box-shadow: 0 18px 42px rgba(34,52,33,.08); isolation: isolate; }
+.nwis-geo-visual::before { position: absolute; z-index: -1; inset: 0; content: ''; background-image: linear-gradient(rgba(52,70,50,.07) 1px, transparent 1px), linear-gradient(90deg, rgba(52,70,50,.07) 1px, transparent 1px); background-size: 31px 31px; }
+.nwis-visual-topline { position: absolute; top: 15px; right: 17px; left: 17px; display: flex; justify-content: space-between; color: #73806e; font-size: 8px; font-weight: 800; letter-spacing: .14em; }
+.nwis-layer-label { position: absolute; z-index: -1; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; padding: 8px 17px; border-top: 1px solid rgba(98,116,83,.19); border-bottom: 1px solid rgba(98,116,83,.14); color: rgba(51,70,47,.72); font-size: 8px; font-weight: 850; letter-spacing: .12em; }
+.nwis-layer-label small { color: rgba(68,83,65,.6); font-size: 7px; font-weight: 650; }
+.nwis-layer-a { top: 92px; height: 65px; background: rgba(199,207,185,.38); }
+.nwis-layer-b { top: 157px; height: 91px; background: rgba(211,190,142,.34); }
+.nwis-layer-c { top: 248px; height: 77px; background: rgba(142,158,128,.32); }
+.nwis-surface-line { position: absolute; top: 70px; left: 0; right: 0; height: 22px; border-top: 2px solid #54634e; }
+.nwis-surface-line span { position: absolute; top: 4px; right: 13px; color: #697566; font-size: 7px; font-weight: 800; letter-spacing: .13em; }
+.nwis-wellbore { position: absolute; z-index: 2; top: 72px; width: 2px; height: 235px; }
+.nwis-active-bore { left: 49%; }
+.nwis-bore-line { display: block; width: 2px; height: 100%; background: #263d27; box-shadow: 0 0 0 4px rgba(232,177,62,.18); }
+.nwis-bore-head { position: absolute; top: -14px; left: -22px; padding: 3px 5px; background: #263d27; color: white; font-size: 7px; font-weight: 850; letter-spacing: .08em; }
+.nwis-bit { position: absolute; bottom: -4px; left: -4px; width: 10px; height: 10px; transform: rotate(45deg); border-right: 2px solid #d79e36; border-bottom: 2px solid #d79e36; }
+.nwis-offset-bore { top: 72px; height: 183px; border-left: 1px dashed rgba(48,66,45,.6); }
+.nwis-offset-one { left: 26%; }.nwis-offset-two { left: 73%; height: 205px; }
+.nwis-offset-dot { position: absolute; top: 176px; left: -4px; width: 7px; height: 7px; border: 1px solid #526b4b; border-radius: 50%; background: #f5f6f1; }
+.nwis-event-marker { position: absolute; top: 211px; left: calc(49% + 11px); display: flex; align-items: center; gap: 5px; color: #7c5c24; font-size: 7px; font-weight: 850; letter-spacing: .09em; }
+.nwis-event-marker span { width: 7px; height: 7px; border: 2px solid #cb9632; border-radius: 50%; background: #f7e8c7; }
+.nwis-risk-callout { position: absolute; right: 14px; bottom: 56px; display: grid; gap: 4px; padding: 8px 10px; border-left: 2px solid #d69c32; background: rgba(255,255,255,.87); color: #687467; font-size: 7px; font-weight: 750; letter-spacing: .09em; }
+.nwis-risk-callout i { position: absolute; top: 50%; left: -85px; width: 82px; border-top: 1px dashed #a98745; }
+.nwis-risk-callout b { color: #2e422c; font-size: 9px; letter-spacing: .02em; }
+.nwis-visual-caption { position: absolute; bottom: 16px; left: 16px; display: flex; align-items: center; gap: 7px; color: #64715e; font-size: 7px; font-weight: 850; letter-spacing: .12em; }
+.nwis-caption-rule { width: 16px; height: 1px; background: #d69c32; }
+.nwis-visual-coordinates { position: absolute; right: 15px; bottom: 16px; color: #667361; font-family: ui-monospace, monospace; font-size: 8px; }
+.nwis-visual-coordinates span { display: block; margin-top: 4px; color: #899184; text-align: right; font-family: inherit; font-size: 7px; }
+.nwis-feature-section { padding: 28px 0 46px; border-top: 1px solid #dfe4da; }
+.nwis-section-heading > span, .nwis-landing-cta > div > span { color: #7a866f; font-size: 8px; font-weight: 850; letter-spacing: .17em; }
+.nwis-section-heading h2, .nwis-landing-cta h2 { margin: 7px 0 0; color: #253824; font-size: 21px; letter-spacing: -.035em; }
+.nwis-feature-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 22px; border: 1px solid #dfe4da; background: #fff; }
+.nwis-feature { min-height: 136px; padding: 17px 18px; border-right: 1px solid #e4e8df; }
+.nwis-feature:last-child { border-right: 0; }
+.nwis-feature-top { display: flex; align-items: center; justify-content: space-between; color: #a47c31; font-size: 9px; font-weight: 850; }
+.nwis-feature h3 { margin: 17px 0 6px; color: #2d3d2c; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .025em; }
+.nwis-feature p { max-width: 235px; margin: 0; color: #738071; font-size: 10px; line-height: 1.6; }
+.nwis-how-section { padding: 6px 0 48px; }
+.nwis-flow { display: flex; align-items: center; justify-content: space-between; gap: 9px; margin-top: 21px; padding: 18px 16px; border: 1px solid #dfe4da; background: #edf0e8; }
+.nwis-flow-step { display: grid; gap: 6px; min-width: 0; }
+.nwis-flow-step > span { color: #a17a31; font-size: 8px; font-weight: 850; letter-spacing: .11em; }
+.nwis-flow-step strong { color: #3b4a38; font-size: 9px; white-space: nowrap; }
+.nwis-flow-step.is-final strong { color: #1e2e1e; }
+.nwis-flow-arrow { flex: 0 0 auto; color: #a2aa9b; }
+.nwis-landing-cta { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 34px; padding: 22px 24px; border-left: 3px solid #dda83e; background: #e8ece3; }
+.nwis-landing-cta h2 { font-size: 17px; }
+.nwis-landing-cta .nwis-enter-button { flex: 0 0 auto; }
+.nwis-landing-footer { display: flex; justify-content: space-between; gap: 15px; padding: 16px 0 20px; border-top: 1px solid #dfe4da; color: #7e8879; font-size: 8px; }
+
+@media (max-width: 1200px) {
+  .nwis-header { grid-template-columns: max-content minmax(0, 1fr); row-gap: 3px; }
+  .nwis-topbar-ops { grid-column: 2; grid-row: 1; }
+  .nwis-topnav { grid-column: 1 / -1; grid-row: 2; justify-content: flex-start; overflow: visible; }
+  .nwis-system-status { display: none; }
+  .nwis-landing-hero { gap: 32px; }
+}
+@media (max-width: 760px) {
+  .nwis-header { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; }
+  .nwis-topbar-brand { flex: 1 1 190px; }
+  .nwis-topbar-ops { flex: 1 1 auto; }
+  .nwis-topnav { order: 3; width: 100%; justify-content: flex-start; overflow: visible; flex-wrap: wrap; padding-bottom: 2px; }
+  .nwis-topnav-link { padding-inline: 7px; font-size: 9px; }
+  .nwis-header-stepper { display: none; }
+  .nwis-landing-header, .nwis-landing main, .nwis-landing-footer { width: min(100% - 32px, 580px); }
+  .nwis-landing-hero { grid-template-columns: 1fr; gap: 30px; padding: 42px 0; }
+  .nwis-hero-copy h1 em { white-space: normal; }
+  .nwis-geo-visual { height: 330px; }
+  .nwis-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .nwis-feature:nth-child(2) { border-right: 0; }
+  .nwis-feature:nth-child(-n+2) { border-bottom: 1px solid #e4e8df; }
+  .nwis-flow { display: grid; grid-template-columns: 1fr 20px 1fr; }
+  .nwis-flow-step { min-height: 42px; }
+  .nwis-flow-arrow { transform: rotate(90deg); }
+}
+@media (max-width: 480px) {
+  .nwis-landing-header, .nwis-landing main, .nwis-landing-footer { width: calc(100% - 28px); }
+  .nwis-about-link { font-size: 10px; }
+  .nwis-hero-copy h1 { font-size: clamp(34px, 9vw, 43px); }
+  .nwis-hero-lede { font-size: 16px; }
+  .nwis-geo-visual { height: 290px; }
+  .nwis-layer-label { padding-inline: 10px; }
+  .nwis-feature { padding: 13px 11px; }
+  .nwis-feature h3 { font-size: 9px; }
+  .nwis-feature p { font-size: 9px; }
+  .nwis-flow { padding: 13px 10px; }
+  .nwis-flow-step strong { white-space: normal; font-size: 8px; }
+  .nwis-landing-cta { align-items: flex-start; flex-direction: column; padding: 18px; }
+  .nwis-landing-footer { flex-direction: column; }
+  .nwis-active-well > span { display: none; }
+  .nwis-active-well select { max-width: 112px; }
+}
