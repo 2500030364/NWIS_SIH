@@ -3,7 +3,7 @@
  * Connects React frontend to FastAPI backend endpoints.
  */
 
-const API_BASE = '/api';
+const API_BASE = 'https://nwis-sih.onrender.com/api';
 
 async function handleResponse(res) {
   if (!res.ok) {
